@@ -19,13 +19,15 @@ export default function App() {
   }
 
   return (
-    <section className="container">
-      <Title>Menus</Title>
-      <Header
-        handleMenuFilter={handleMenuFilter}
-        menus={data}
-      />
-      <MenusFiltered menus={menus} />
-    </section>
+    <main>
+      <section className="menu">
+        <Title>Menus</Title>
+        <Header
+          handleMenuFilter={handleMenuFilter}
+          menus={data}
+        />
+        <MenusFiltered menus={menus} />
+      </section>
+    </main>
   )
 }

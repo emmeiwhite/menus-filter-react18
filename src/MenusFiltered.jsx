@@ -3,7 +3,7 @@ import Menu from './Menu'
 
 export default function MenusFiltered({ menus }) {
   return (
-    <section>
+    <section className="section-center">
       {menus.map(menu => (
         <Menu
           {...menu}

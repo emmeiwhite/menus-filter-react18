@@ -3,7 +3,7 @@ export default function Header({ menus, handleMenuFilter }) {
   console.log(categories)
 
   return (
-    <div>
+    <div className="">
       {categories.map(category => {
         return (
           <button
