@@ -1,5 +1,5 @@
 export default function Header({ menus, handleMenuFilter }) {
-  const categories = [...new Set(menus.map(item => item.category))]
+  const categories = [...new Set(menus.map(item => item.category)), 'all']
   console.log(categories)
 
   return (

@@ -2,20 +2,18 @@ import { useState } from 'react'
 import data from './data'
 import Title from './Title'
 import Header from './Header'
+import MenusFiltered from './MenusFiltered'
 
 export default function App() {
   const [menus, setMenus] = useState(data)
 
   const handleMenuFilter = category => {
-    console.log(category)
+    if (category === 'all') {
+      setMenus(data)
+      return
+    }
 
     const filteredMenus = data.filter(menu => menu.category === category)
-
-    console.log(filteredMenus)
-    // const filteredMenus = setMenus(menus => {
-    //   data.filter(menu => menu.category === category)
-    // })
-    // return filteredMenus
 
     setMenus(filteredMenus)
   }
@@ -27,6 +25,7 @@ export default function App() {
         handleMenuFilter={handleMenuFilter}
         menus={data}
       />
+      <MenusFiltered menus={menus} />
     </section>
   )
 }
