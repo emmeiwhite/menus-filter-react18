@@ -1,5 +1,5 @@
 export default function Header({ menus, handleMenuFilter }) {
-  const categories = [...new Set(menus.map(item => item.category)), 'all']
+  const categories = ['all', ...new Set(menus.map(item => item.category))]
   console.log(categories)
 
   return (
@@ -9,6 +9,8 @@ export default function Header({ menus, handleMenuFilter }) {
           <button
             className="btn"
             onClick={() => handleMenuFilter(category)}
+            type="button"
+            key={category}
           >
             {category}
           </button>
